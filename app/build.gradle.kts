@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -42,7 +46,38 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Room and Architectural Components
+    implementation (libs.androidx.room.runtime)
+    implementation (libs.androidx.legacy.support.v4)
+    implementation (libs.androidx.lifecycle.extensions)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx.v210)
+    implementation (libs.androidx.room.ktx)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android.v139)
+
+    // New Material Design
+    implementation (libs.material.v100)
+
+    // ViewModel
+    implementation (libs.androidx.lifecycle.extensions.v200)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx.v200)
+
+
+    implementation(libs.androidx.material)
+
+    implementation(libs.room)
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+
 }
